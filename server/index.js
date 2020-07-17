@@ -49,6 +49,12 @@ app.get('/student/:name', async(req, res) => {
     res.send(JSON.stringify(resultList));
 })
 
-app.listen(3001,()=>{
-    console.log('success')
-})
+// local
+// app.listen(3001,()=>{
+//     console.log('success')
+// })
+
+const port = process.env.NODE_ENV === 'production' ? (process.env.PORT || 80) : 4000;
+app.listen(port, function () {
+    console.log('Server listening on port ' + port);
+});
