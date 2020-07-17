@@ -50,11 +50,11 @@ app.get('/student/:name', async(req, res) => {
 })
 
 // local
-// app.listen(3001,()=>{
-//     console.log('success')
-// })
+app.listen(3001,()=>{
+    console.log('success')
+})
 
-const port = process.env.NODE_ENV === 'production' ? (process.env.PORT || 80) : 4000;
-app.listen(port, function () {
-    console.log('Server listening on port ' + port);
-});
+// const port = process.env.NODE_ENV === 'production' ? (process.env.PORT || 80) : 4000;
+// app.listen(port, function () {
+//     console.log('Server listening on port ' + port);
+// });
