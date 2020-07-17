@@ -5,6 +5,11 @@ import './plugins/element.js'
 
 Vue.config.productionTip = false
 
+import axios from 'axios'
+Vue.prototype.$http = axios.create({
+  baseURL:'http://localhost:3001'
+})
+
 new Vue({
   router,
   render: h => h(App)
