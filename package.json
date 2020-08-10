@@ -7,13 +7,16 @@
     "build": "vue-cli-service build",
     "lint": "vue-cli-service lint",
     "test": "mocha",
-    "unit":"jest"
+    "unit": "jest"
   },
   "dependencies": {
     "axios": "^0.19.2",
     "core-js": "^3.6.5",
     "cors": "^2.8.5",
     "element-ui": "^2.4.5",
+    "express": "^4.17.1",
+    "express-graphql": "^0.11.0",
+    "graphql": "^15.3.0",
     "vue": "^2.6.11",
     "vue-router": "^3.2.0"
   },
