@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="getData()"> Get Data</button>
+</body>
+
+<script>
+    function getData(){
+        const query = `
+        query Salary($userId:String, $city: Int){
+            salary(userId: $userId) {
+                name
+                sex
+                money(city:$city)
+            }
+        }
+
+        `
+
+        const variables = {userId: 'harryyy', city: 0}
+
+        fetch('/graphql',{
+            method: "POST",
+            headers:{
+                'Content-Type': 'application/json',
+                'Accept': 'application/json'
+            },
+            body: JSON.stringify({
+                query: query,
+                variables: variables
+            })
+        }).then(res => res.json()).
+        then(data => {console.log(data)}
+        );
+    }
+</script>
+</html>
